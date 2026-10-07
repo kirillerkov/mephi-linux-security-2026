@@ -1,0 +1,7 @@
+passwd
+exit
+date
+date -s "2026-10-01"
+sudo date -s "2026-10-01"
+date
+exit

@@ -1,0 +1,31 @@
+    1  sudo groupadd students
+    2  sudo useradd -u 1234 -G students user1
+    3  sudo passwd user1
+    4  sudo chage -M 90 user1
+    5  sudo chage -l user1 
+    6  sudo find / -perm -4000 -fprintf ~/monitoring_files.out '%#m %u %p\n'
+    7  cat monitoring_files.out
+    8  sudo ps -U kirill,user1 -o ruser,euser,pid,comm 
+    9  ps -U kirill,user1 -o ruser,euser,pid,comm | grep root
+   10  sudo ps -U kirill,user1 -o ruser,euser,pid,comm | grep root
+   11  sudo ps -U kirill,user1 -o ruser,euser,pid,comm | grep root > ~/monitoring_processes.out
+   12  cat monitoring_processes.out
+   13  su - user1 -c 'cat /etc/shadow'
+   14  sudo cp /usr/bin/cat /home/user1/cat
+   15  sudo chown root:root /home/user1/cat
+   16  sudo chmod 4755 /home/user1/cat
+   17  sudo ls -l /home/user1/cat
+   18  su - user1 -c '/home/user1/cat /etc/shadow'
+   19  su - user1 -c 'touch ~/test.txt'
+   20  su - user1 -c 'chown root ~/test.txt'
+   21  sudo cp /usr/bin/chown /home/user1/chown
+   22  ldd /usr/bin/chown
+   23  sudo setcap "cap_chown=ep" /home/user1/chown
+   24  sudo getcap /home/user1/chown
+   25  su - user1 -c '/home/user1/chown root:root ~/test.txt'
+   26  sudo ls -l /home/user1/
+   27  sudo visudo
+   28  su - user1
+   29  sudo date -s "2026-10-07 20:00:00"
+   30  echo 'М265230'
+   31  history > ~/history.out
